@@ -1,0 +1,384 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "AngularLiveProject API Documentation",
+        "description": "",
+        "contact": {
+            "email": "admin@admin.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://angular_live_project_api.test/",
+            "description": "Local API Server"
+        },
+        {
+            "url": "http://192.168.0.150:8008/",
+            "description": "Local API Server Using IP"
+        }
+    ],
+    "paths": {
+        "/api/coursePost/coursePostListing": {
+            "post": {
+                "tags": [
+                    "coursePost,coursePostListing"
+                ],
+                "summary": "coursePost",
+                "description": "",
+                "operationId": "coursePostListing",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/coursePost/coursePostDetail": {
+            "post": {
+                "tags": [
+                    "coursePost,coursePostDetail"
+                ],
+                "summary": "coursePost",
+                "description": "",
+                "operationId": "coursePostDetail",
+                "parameters": [
+                    {
+                        "name": "course_post_id",
+                        "in": "query",
+                        "description": "course_post_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/coursePost/coursePostStore": {
+            "post": {
+                "tags": [
+                    "coursePost,coursePostStore"
+                ],
+                "summary": "coursePost",
+                "description": "",
+                "operationId": "coursePostStore",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "title",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "short_desc",
+                        "in": "query",
+                        "description": "short_desc",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "full_desc",
+                        "in": "query",
+                        "description": "full_desc",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "author",
+                        "in": "query",
+                        "description": "author",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "is_active",
+                        "in": "query",
+                        "description": "is_active",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": false,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "image"
+                                ],
+                                "properties": {
+                                    "image": {
+                                        "description": "image to upload",
+                                        "type": "file"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/coursePost/coursePostUpdate": {
+            "post": {
+                "tags": [
+                    "coursePost,coursePostUpdate"
+                ],
+                "summary": "coursePost",
+                "description": "",
+                "operationId": "coursePostUpdate",
+                "parameters": [
+                    {
+                        "name": "course_post_id",
+                        "in": "query",
+                        "description": "course_post_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "title",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "short_desc",
+                        "in": "query",
+                        "description": "short_desc",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "full_desc",
+                        "in": "query",
+                        "description": "full_desc",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "author",
+                        "in": "query",
+                        "description": "author",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "is_active",
+                        "in": "query",
+                        "description": "is_active",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": false,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "image": {
+                                        "description": "image to upload",
+                                        "type": "file"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/coursePost/coursePostDelete": {
+            "post": {
+                "tags": [
+                    "coursePost,coursePostDelete"
+                ],
+                "summary": "coursePost",
+                "description": "",
+                "operationId": "coursePostDelete",
+                "parameters": [
+                    {
+                        "name": "course_post_id",
+                        "in": "query",
+                        "description": "course_post_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/employeeMaster/employeeMasterStore": {
+            "post": {
+                "tags": [
+                    "employeeMaster,employeeMasterStore"
+                ],
+                "summary": "employeeMaster",
+                "description": "",
+                "operationId": "employeeMasterStore",
+                "parameters": [
+                    {
+                        "name": "first_name",
+                        "in": "query",
+                        "description": "first_name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "last_name",
+                        "in": "query",
+                        "description": "last_name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "email",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/employeeMaster/employeeMasterLogin": {
+            "post": {
+                "tags": [
+                    "employeeMaster,employeeMasterLogin"
+                ],
+                "summary": "employeeMaster",
+                "description": "",
+                "operationId": "employeeMasterLogin",
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "description": "username",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "name": "bearerAuth",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Projects",
+            "description": "API Endpoints of Projects"
+        }
+    ]
+}
